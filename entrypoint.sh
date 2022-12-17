@@ -60,8 +60,8 @@ then
 fi
 
 echo "Adding git commit"
-git add .
 git config --global --add safe.directory $DEST_COPY
+git add .
 if git status | grep -q "Changes to be committed"
 then
   git commit --message "$INPUT_COMMIT_MESSAGE"
