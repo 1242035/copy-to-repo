@@ -61,7 +61,7 @@ fi
 
 echo "Adding git commit"
 DEST_FOLDER="$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
-CANONICAL_PATH="$( realpath --canonicalize-existing "${DEST_FOLDER}" )"
+CANONICAL_PATH="$( realpath "${DEST_FOLDER}" )"
 git config --global --add safe.directory $CANONICAL_PATH
 git add .
 if git status | grep -q "Changes to be committed"
